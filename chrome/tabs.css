@@ -1,3 +1,7 @@
+*{
+    color: var(--tf-acent);
+}
+
 box#vertical-tabs {
   margin: 8px !important;
   border: var(--border-width) solid var(--tf-border);
@@ -43,6 +47,7 @@ box#vertical-tabs {
     }
   }
   &::before {
+      color: var(--tf-border);
     display: var(--tf-display-titles);
     content: "tabs";
     background-color: var(--tf-bg);
@@ -54,12 +59,12 @@ box#vertical-tabs {
   #firefox-view-button[open] > .toolbarbutton-icon,
   .tab-background:is([selected], [multiselected]) {
     box-shadow: none !important;
-    background-color: var(--tab-selected-bgcolor) !important;
+    background-color: var(--tf-bg) !important;
   }
   .tabbrowser-tab:hover
     > .tab-stack
     > .tab-background:not([selected], [multiselected]) {
-    background-color: var(--tab-hover-background-color) !important;
+    background-color: var(--tf-bg) !important;
   }
 }
 
@@ -78,8 +83,26 @@ box#vertical-tabs {
 
 .toolbar-items {
   margin: 3px;
+/* Style pour les onglets individuels */
+.tabbrowser-tab {
+    color: var(--tf-acent);
+  padding: 2px !important;
 }
 
-tabs {
-  text-transform: var(--tf-text-transform);
+.tab-background {
+  border: var(--border-width) solid var(--tf-border) !important;
+  border-radius: var(--tf-rounding) !important;
+  margin: 1px !important;
+  transition: border-color var(--tf-border-transition);
 }
+
+/* Style pour l'onglet au survol */
+.tab-background:hover {
+  border-color: var(--tf-accent) !important;
+}
+
+/* Style pour l'onglet sélectionné */
+.tab-background[selected] {
+  border-color: var(--tf-accent) !important;
+  background-color: var(--tf-bg) !important;
+}}

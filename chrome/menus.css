@@ -34,3 +34,6 @@ menuitem {
 menuitem {
   border-radius: var(--tf-rounding) !important;
 }
+*:befor{
+    color: var(--tf-border);
+}
